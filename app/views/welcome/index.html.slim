@@ -1,0 +1,10 @@
+h1 = t'welcome.title'
+p = t'welcome.description'
+navigation
+  ul
+    li = link_to 'Home', root_path
+    li = link_to 'About', "#about"
+
+main
+  section
+    = link_to 'Add house', new_house_path

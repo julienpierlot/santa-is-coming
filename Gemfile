@@ -9,6 +9,10 @@ gem 'httparty'
 gem 'slim'
 gem 'awesome_print'
 
+gem "faker"
+
+gem "bulma-rails", "~> 0.8.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'pg'

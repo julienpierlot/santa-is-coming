@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_222737) do
+ActiveRecord::Schema.define(version: 2019_12_25_184038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 2019_12_23_222737) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.integer "age"
+    t.bigint "house_id"
+    t.string "behavior", default: "wise"
+    t.index ["house_id"], name: "index_children_on_house_id"
   end
 
   create_table "gift_infos", force: :cascade do |t|
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_222737) do
   create_table "gifts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "open"
+    t.boolean "open", default: false
   end
 
   create_table "houses", force: :cascade do |t|
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_222737) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
     t.string "city"
-    t.boolean "chimney"
+    t.boolean "chimney", default: false
   end
 
   create_table "lists", force: :cascade do |t|
@@ -51,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_222737) do
     t.index ["gift_id"], name: "index_lists_on_gift_id"
   end
 
+  add_foreign_key "children", "houses"
   add_foreign_key "lists", "children"
   add_foreign_key "lists", "gifts"
 end

@@ -30,4 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome:
+    title: "Welcome to 'Santa is coming' app!"
+    description: "You can create houses, add children, and each of them can create his own christmas list in order to lure Santa. Once Christmas."

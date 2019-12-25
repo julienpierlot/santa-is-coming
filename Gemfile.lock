@@ -65,6 +65,8 @@ GEM
     bootsnap (1.4.5-java)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bulma-rails (0.8.0)
+      sassc (~> 2.0)
     byebug (11.0.1)
     capybara (3.29.0)
       addressable
@@ -81,6 +83,8 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.9.0)
+    faker (2.9.0)
+      i18n (>= 1.6, < 1.8)
     ffi (1.11.3)
     ffi (1.11.3-java)
     ffi (1.11.3-x64-mingw32)
@@ -282,8 +286,10 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bootsnap (>= 1.4.2)
+  bulma-rails (~> 0.8.0)
   byebug
   capybara (>= 2.15)
+  faker
   http
   httparty
   jbuilder (~> 2.7)
