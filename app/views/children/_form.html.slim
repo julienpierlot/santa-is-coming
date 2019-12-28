@@ -1,0 +1,27 @@
+= form_with scope: :child, url: house_children_path, local: true do |form|
+
+  .field
+    = form.label :name, class: "label"
+    .control
+      = form.text_field :name, placeholder: Faker::Name.name, class: 'input'
+
+  .field
+    = form.label :age, class: "label"
+    .control
+      = form.text_field :age, placeholder: Faker::Number.number, class: 'input'
+
+  .field
+    = form.label :behavior, class: "label", value: "How did he behave this year?"
+    .control
+      = form.label :behavior, class: "radio"
+        = form.radio_button :behavior, :wise
+        |  Wisely
+      = form.label :behavior, class: "radio"
+        = form.radio_button :behavior, :bad
+        |  Badly
+
+  .field.is-grouped
+    .control
+      = form.submit 'Add child', class: "button is-link"
+    .control
+      = link_to 'Back', :back, class: "button is-link is-light"

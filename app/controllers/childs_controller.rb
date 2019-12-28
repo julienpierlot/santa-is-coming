@@ -1,2 +1,0 @@
-class ChildsController < ApplicationController
-end

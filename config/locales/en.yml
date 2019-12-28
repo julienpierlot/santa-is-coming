@@ -30,6 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  navigation:
+    home: "Home"
+    house: "Houses"
   welcome:
     title: "Welcome to 'Santa is coming' app!"
-    description: "You can create houses, add children, and each of them can create his own christmas list in order to lure Santa. Once Christmas."
+    description: "You can create houses, add children, and each of them can create his own christmas list in order to lure Santa. On Chritsmas Eve, children who live in houses with chimneys can open their gifts!"
+    actions: "What do you want to do?"
+    latest-house:
+      title: "Latest houses"

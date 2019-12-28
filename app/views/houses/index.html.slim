@@ -1,0 +1,20 @@
+section.hero.is-primary
+  .hero-body
+    .hero-container
+      h1.title List of houses
+
+= @houses.each do |house|
+  section.section
+    .tile.is-ancestor
+      .tile.is-parent
+        .tile.is-child.box
+          .content
+            h3.title
+              |#
+              = house.id
+            p
+              |Address: 
+              = house.address
+            p
+              |Nb of children: 
+              = house.children.count

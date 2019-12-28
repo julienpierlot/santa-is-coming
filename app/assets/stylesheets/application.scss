@@ -14,4 +14,22 @@
  *= require_self
  */
 
+ @import 'base/_typography';
+
+ @import 'components/_buttons';
+ @import 'components/forms';
+
+ @import "layout/_header";
+ @import "layout/_footer";
+ @import "layout/_grid";
+
+ @import "pages/welcome";
+ @import "pages/gift_infos";
+ @import "pages/gifts";
+ @import "pages/houses";
+ @import "pages/lists";
+
+ @import 'utilities/_variables';
+ @import 'vendor/_bulma';
+
 @import "bulma";

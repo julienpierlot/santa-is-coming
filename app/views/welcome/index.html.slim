@@ -1,10 +1,27 @@
-h1 = t'welcome.title'
-p = t'welcome.description'
-navigation
-  ul
-    li = link_to 'Home', root_path
-    li = link_to 'About', "#about"
-
 main
-  section
-    = link_to 'Add house', new_house_path
+  section.hero.is-primary
+    .hero-body
+      .hero-container
+        h1.title = t'welcome.title'
+        h2.subtitle = t'welcome.description'
+        p   = t'welcome.actions'
+        .buttons
+          = link_to 'Add house', new_house_path, class: "button is-info"
+          = link_to 'See houses', houses_path, class: "button is-warning"
+
+  section.section
+    h2.title = t'welcome.latest-house.title'
+    = @houses.each do |house|
+      .tile.is-ancestor
+        .tile.is-parent
+          .tile.is-child.box
+            .content
+              h4.title
+                |#
+                = house.id
+              p
+                |Address: 
+                = house.address
+              p
+                |Nb of children: 
+                = house.children.count

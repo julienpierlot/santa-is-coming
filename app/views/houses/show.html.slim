@@ -1,0 +1,17 @@
+section.hero.is-primary
+  .hero-body
+    .hero-container
+      h1.title House details
+      p
+        |Address: 
+        = @house.address
+      p
+        |City: 
+        = @house.city
+      p
+        |Number of children:
+        = @house.children.count
+
+.buttons
+  =link_to "See children", house_children_path(@house), class: "button is-warning"
+  =link_to "Add child", new_house_child_path(@house), class: "button is-warning"

@@ -1,0 +1,27 @@
+= form_with scope: :house, url: houses_path, local: true do |form|
+
+  .field
+    = form.label :address, class: "label"
+    .control
+      = form.text_field :address, placeholder: Faker::Address.street_address, class: 'input'
+
+  .field
+    = form.label :city, class: "label"
+    .control
+      = form.text_field :city, placeholder: Faker::Address.city, class: 'input'
+
+  .field
+    = form.label :chimney, class: "label"
+    .control
+      = form.label :yes, class: "radio"
+        = form.radio_button :chimney, "Yes"
+        |  Yes
+      = form.label :no, class: "radio"
+        = form.radio_button :chimney, "No"
+        |  No
+
+  .field.is-grouped
+    .control
+      = form.submit 'Add house', class: "button is-link"
+    .control
+      = link_to 'Back', :back, class: "button is-link is-light"

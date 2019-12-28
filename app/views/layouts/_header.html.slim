@@ -1,0 +1,15 @@
+header
+  nav.navbar.is-black[role='navigation' aria-label="main navigation"]
+    .navbar-brand
+      = link_to root_path, class: "navbar-item"
+        = image_tag 'santa.jpg'
+      a[role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"]
+        span[aria-hidden="true"]
+        span[aria-hidden="true"]
+        span[aria-hidden="true"]
+    .navbar-menu
+      .navbar-start
+        .navbar-item
+          = link_to "Home", root_path, class: "navbar-item"
+        .navbar-item
+          = link_to "Houses", houses_path, class: "navbar-item"
