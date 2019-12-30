@@ -1,0 +1,22 @@
+section.hero.is-primary
+  .hero-body
+    .hero-container
+      h1.title List details
+
+
+= @list.gifts.each do |gift|
+  section.section
+    .tile.is-ancestor
+      .tile.is-parent
+        .tile.is-child.box
+          .content
+            h3.title
+              =link_to "##{gift.gift_info.id}", gift_info_path(gift.gift_info)
+            p
+              |Name: 
+              = gift.gift_info.name
+
+section.section
+  .buttons
+    =link_to "Modify list", child_list_path(@child, @list), class: "button is-warning", method: :put
+    =link_to "Back", :back, class: "button is-warning"

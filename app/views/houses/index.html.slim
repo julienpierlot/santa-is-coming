@@ -10,8 +10,7 @@ section.hero.is-primary
         .tile.is-child.box
           .content
             h3.title
-              |#
-              = house.id
+              =link_to "##{house.id}", house_path(house)
             p
               |Address: 
               = house.address

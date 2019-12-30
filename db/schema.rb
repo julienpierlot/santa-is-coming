@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_184038) do
+ActiveRecord::Schema.define(version: 2019_12_30_220835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 2019_12_25_184038) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "open", default: false
+    t.bigint "list_id"
+    t.bigint "child_id"
+    t.bigint "gift_info_id"
+    t.index ["child_id"], name: "index_gifts_on_child_id"
+    t.index ["gift_info_id"], name: "index_gifts_on_gift_info_id"
+    t.index ["list_id"], name: "index_gifts_on_list_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -55,6 +61,9 @@ ActiveRecord::Schema.define(version: 2019_12_25_184038) do
   end
 
   add_foreign_key "children", "houses"
+  add_foreign_key "gifts", "children"
+  add_foreign_key "gifts", "gift_infos"
+  add_foreign_key "gifts", "lists"
   add_foreign_key "lists", "children"
   add_foreign_key "lists", "gifts"
 end

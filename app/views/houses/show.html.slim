@@ -9,9 +9,13 @@ section.hero.is-primary
         |City: 
         = @house.city
       p
+        |Chimney: 
+        =  @house.chimney ? "yes" : "no"
+      p
         |Number of children:
         = @house.children.count
 
-.buttons
-  =link_to "See children", house_children_path(@house), class: "button is-warning"
-  =link_to "Add child", new_house_child_path(@house), class: "button is-warning"
+section.section
+  .buttons
+    =link_to "See children", house_children_path(@house), class: "button is-warning"
+    =link_to "Add child", new_house_child_path(@house), class: "button is-warning"

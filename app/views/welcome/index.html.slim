@@ -17,8 +17,7 @@ main
           .tile.is-child.box
             .content
               h4.title
-                |#
-                = house.id
+                = link_to "##{house.id}", house_path(house)
               p
                 |Address: 
                 = house.address

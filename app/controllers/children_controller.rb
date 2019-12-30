@@ -19,7 +19,11 @@ class ChildrenController < ApplicationController
 
   def show
     @child = Child.find(params[:id])
-    @house = House.find(params[:house_id])
+  end
+
+  def index
+    @house = House.find(params["house_id"])
+    @children = Child.where(:house_id == @house.id)
   end
 
   private

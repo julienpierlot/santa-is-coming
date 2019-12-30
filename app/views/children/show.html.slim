@@ -11,5 +11,7 @@ section.hero.is-primary
       p
         |Behavior this year: 
         = @child.behavior
-
-=link_to "Back", house_path(@house), class: "button is-warning"
+section.section
+  .buttons
+    =link_to "Create Christmas list", new_child_list_path(@child), class: "button is-warning"
+    =link_to "Back", :back, class: "button is-warning"

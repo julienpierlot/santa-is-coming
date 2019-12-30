@@ -1,0 +1,19 @@
+section.hero.is-primary
+  .hero-body
+    .hero-container
+      h1.title List of children in the house
+
+= @children.each do |child|
+  section.section
+    .tile.is-ancestor
+      .tile.is-parent
+        .tile.is-child.box
+          .content
+            h3.title
+              =link_to "##{child.id}", child_path(@house)
+            p
+              |Name: 
+              = child.name
+            p
+              |Age: 
+              = child.age
