@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_220835) do
+ActiveRecord::Schema.define(version: 2019_12_30_233409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2019_12_30_220835) do
     t.integer "age"
     t.bigint "house_id"
     t.string "behavior", default: "wise"
+    t.bigint "list_id"
     t.index ["house_id"], name: "index_children_on_house_id"
+    t.index ["list_id"], name: "index_children_on_list_id"
   end
 
   create_table "gift_infos", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_220835) do
   end
 
   add_foreign_key "children", "houses"
+  add_foreign_key "children", "lists"
   add_foreign_key "gifts", "children"
   add_foreign_key "gifts", "gift_infos"
   add_foreign_key "gifts", "lists"

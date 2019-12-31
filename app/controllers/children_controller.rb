@@ -10,7 +10,7 @@ class ChildrenController < ApplicationController
     @child.save!
     if @child.save
       @house = House.find(params["house_id"])
-      redirect_to house_child_path(@house, @child)
+      redirect_to house_path(@house)
     else
       render "new"
     end
@@ -18,7 +18,7 @@ class ChildrenController < ApplicationController
 
 
   def show
-    @child = Child.find(params[:id])
+    @child = Child.find(params["id"])
   end
 
   def index

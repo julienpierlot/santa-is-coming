@@ -18,5 +18,5 @@ section.hero.is-primary
 
 section.section
   .buttons
-    =link_to "Modify list", child_list_path(@child, @list), class: "button is-warning", method: :put
-    =link_to "Back", :back, class: "button is-warning"
+    =link_to "Modify list", child_list_path, class: "button is-warning"
+    =link_to "Child profile", child_path(@child), class: "button is-warning"

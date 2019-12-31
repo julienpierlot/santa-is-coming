@@ -10,7 +10,7 @@ section.hero.is-primary
         .tile.is-child.box
           .content
             h3.title
-              =link_to "##{child.id}", child_path(@house)
+              =link_to "##{child.id}", child_path(child.id)
             p
               |Name: 
               = child.name
