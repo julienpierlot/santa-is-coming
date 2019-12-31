@@ -16,6 +16,20 @@ section.hero.is-primary
         = @house.children.count
 
 section.section
+  .tile.is-ancestor
+    - @children.each do |child|
+      .tile.is-parent
+        .tile.is-child.box
+          .content
+            h3.title
+              =link_to "##{child.id}", child_path(child.id)
+            p
+              |Name: 
+              = child.name
+            p
+              |Age: 
+              = child.age
+
+section.section
   .buttons
-    =link_to "See children", house_children_path(@house), class: "button is-warning"
     =link_to "Add child", new_house_child_path(@house), class: "button is-warning"

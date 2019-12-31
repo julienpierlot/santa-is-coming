@@ -11,7 +11,7 @@ main
 
   section.section
     h2.title = t'welcome.latest-house.title'
-    = @houses.each do |house|
+    - @houses.each do |house|
       .tile.is-ancestor
         .tile.is-parent
           .tile.is-child.box

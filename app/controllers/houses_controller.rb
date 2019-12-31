@@ -18,6 +18,7 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
+    @children = Child.where(house_id: @house)
   end
 
   private
