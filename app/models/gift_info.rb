@@ -1,3 +1,4 @@
 class GiftInfo < ApplicationRecord
-  has_many :gifts
+  has_many :gifts, dependent: :destroy
+  has_many :lists, through: :gifts
 end

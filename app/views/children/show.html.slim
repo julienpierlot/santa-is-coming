@@ -12,6 +12,12 @@ section.hero.is-primary
         |Behavior this year: 
         = @child.behavior
 
+section.section
+  .buttons
+    - if !@child.list
+      =link_to "Create Christmas list", child_new_list_path(@child), class: "button is-warning"
+    =link_to "Back", :back, class: "button is-warning"
+
 - if @child.list
   section.section
     .tile.is-ancestor
@@ -19,13 +25,7 @@ section.hero.is-primary
         .tile.is-child.box
           .content
             h3.title
-              =link_to "##{@child.list.id}", child_lists_path(@child)
+              =link_to "##{@child.list.id}", child_list_path(@child)
             p
               |Number of gifts: 
               = @child.gifts.count
-
-section.section
-  .buttons
-    - if !@child.list
-      =link_to "Create Christmas list", new_child_list_path(@child), class: "button is-warning"
-    =link_to "Back", :back, class: "button is-warning"

@@ -1,13 +1,12 @@
-= form_with scope: :lists, url: child_lists_path, local: true do |form|
+= form_with model: @list, url: child_create_list_path, local: true do |form|
 
-  .field
-    = fields_for :gift_infos do |gift_form|
+  = form.fields_for :gift_infos do |gift_form|
+    .field
       = gift_form.label :name, class: "label"
-      .control
-        = gift_form.text_field :name, placeholder: Faker::Games::Zelda.game, class: 'input'
+      = gift_form.text_field :name, placeholder: Faker::Games::Zelda.game, class: 'input'
 
   .field.is-grouped
     .control
-      = form.submit 'Add gift', class: "button is-link"
+      = form.submit 'Create list', class: "button is-link"
     .control
       = link_to 'Back', :back, class: "button is-link is-light"

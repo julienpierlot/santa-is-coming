@@ -2,7 +2,8 @@ section.hero.is-primary
   .hero-body
     .hero-container
       h1.title List of houses
-
+      .buttons
+        = link_to 'Add house', new_house_path, class: "button is-info"
 - @houses.each do |house|
   section.section
     .tile.is-ancestor

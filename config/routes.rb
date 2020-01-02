@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :children, only: [:show] do
-    resources :lists
+    match "list", to: "lists#show", via: :get, as: :list
+    match "list", to: "lists#create", via: :post, as: :create_list
+    get "list/new", to: "lists#new", as: :new_list
+    put "list", to: "lists#edit", as: :update_list
   end
 
   resources :gift_infos

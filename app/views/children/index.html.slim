@@ -4,6 +4,10 @@ section.hero.is-primary
       h1.title List of children in the house
 
 section.section
+  .buttons
+    =link_to "Add child", new_house_child_path(@house), class: "button is-warning"
+
+section.section
   .tile.is-ancestor
     - @children.each do |child|
       .tile.is-parent
@@ -17,7 +21,3 @@ section.section
             p
               |Age: 
               = child.age
-
-section.section
-  .buttons
-    =link_to "Add child", new_house_child_path(@house), class: "button is-warning"

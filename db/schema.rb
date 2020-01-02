@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_233409) do
+ActiveRecord::Schema.define(version: 2020_01_02_001837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,11 +62,11 @@ ActiveRecord::Schema.define(version: 2019_12_30_233409) do
     t.index ["gift_id"], name: "index_lists_on_gift_id"
   end
 
-  add_foreign_key "children", "houses"
-  add_foreign_key "children", "lists"
-  add_foreign_key "gifts", "children"
-  add_foreign_key "gifts", "gift_infos"
-  add_foreign_key "gifts", "lists"
+  add_foreign_key "children", "houses", on_delete: :cascade
+  add_foreign_key "children", "lists", on_delete: :cascade
+  add_foreign_key "gifts", "children", on_delete: :cascade
+  add_foreign_key "gifts", "gift_infos", on_delete: :cascade
+  add_foreign_key "gifts", "lists", on_delete: :cascade
   add_foreign_key "lists", "children"
-  add_foreign_key "lists", "gifts"
+  add_foreign_key "lists", "gifts", on_delete: :cascade
 end
