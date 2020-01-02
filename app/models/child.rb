@@ -9,12 +9,15 @@ class Child < ApplicationRecord
     child.save!
   end
 
-  def create_list!(gifts)
-    gifts.each do |gift|
-      gift_info = GiftInfo.find_or_create_by(name: gift.name)
+  def add_gifts_to_list!(gift_infos)
+    gift_infos.each do |value|
+      gift_info = GiftInfo.find_or_create_by(value)
+      gift = Git.create(gift_info: gift_info)
       self.list.gifts << gift
+      self.gifts << gift
     end
-    self.list.save!
+    self.list.update
+    self.update
   end
 
 

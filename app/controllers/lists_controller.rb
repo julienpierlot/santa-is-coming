@@ -12,12 +12,8 @@ class ListsController < ApplicationController
   def create
     @child = Child.find(params["child_id"])
     @child.list = List.new
-    byebug
-    # @child.create_list!(list_params)
-    # @list = List.create(child_id: @child.id)
-    # @gift_info = GiftInfo.find_or_create_by(name: params.dig("gift_infos", "name"))
-    # @list.add_gift!(@gift_info, @child)
-    if @child.list.any?
+    @child.add_gifts_to_list!(list_params)
+    if @child.list
       redirect_to child_list_path(@child, @list)
     else
       render 'new'
