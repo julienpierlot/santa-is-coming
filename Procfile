@@ -1,1 +1,2 @@
-web: rails server -p 3000
+web: bundle exec rails s -p 3000
+sidekiq: bundle exe sidekiq

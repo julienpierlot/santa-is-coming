@@ -16,7 +16,7 @@ section.section
   .buttons
     - if !@child.list
       =link_to "Create Christmas list", child_new_list_path(@child), class: "button is-warning"
-    =link_to "Back", :back, class: "button is-warning"
+    =link_to "Back to house", house_path(@house), class: "button is-warning"
 
 - if @child.list
   section.section

@@ -1,0 +1,11 @@
+section.hero.is-primary
+  .hero-body
+    .hero-container
+      h1.title Gift information
+      p
+        |Name: 
+        = @gift_info.name
+
+section.section
+  .buttons
+    =link_to "Back", :back, class: "button is-warning"

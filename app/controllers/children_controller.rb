@@ -19,6 +19,7 @@ class ChildrenController < ApplicationController
 
   def show
     @child = Child.find(params["id"])
+    @house = @child.house
   end
 
   def index

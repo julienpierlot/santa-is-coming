@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ChildsController, type: :controller do
+RSpec.describe ChildrenController, type: :controller do
 
 
 end

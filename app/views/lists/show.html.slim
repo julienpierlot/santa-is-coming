@@ -9,7 +9,7 @@ section.section
     =link_to "Child profile", child_path(@child), class: "button is-warning"
 
 - if @child.gifts
-  = @child.gifts.each do |gift|
+  - @child.gifts.each do |gift|
     section.section
       .tile.is-ancestor
         .tile.is-parent

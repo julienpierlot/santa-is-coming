@@ -11,10 +11,11 @@ class ListsController < ApplicationController
 
   def create
     @child = Child.find(params["child_id"])
-    @child.list = List.new
-    @child.add_gifts_to_list!(list_params)
+    gifts_from_list = list_params[:gift_infos_attributes].values
+    @child.create_list!(gifts_from_list)
     if @child.list
       redirect_to child_list_path(@child, @list)
+      ListWorker.perform_async(@child)
     else
       render 'new'
     end
