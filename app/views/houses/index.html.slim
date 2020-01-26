@@ -5,7 +5,7 @@ section.hero.is-primary
       .buttons
         = link_to 'Add house', new_house_path, class: "button is-info"
 section
-  #map[style="width: 100%; height: 200px; border: 1px red solid;" data-markers="#{@markers.to_json}"]
+  #map[style="width: 100%; height: 200px;" data-markers="#{@markers.to_json}"]
 - @houses.each do |house|
   section.section
     .tile.is-ancestor

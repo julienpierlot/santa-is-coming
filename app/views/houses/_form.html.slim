@@ -1,14 +1,14 @@
 = form_with scope: :house, url: houses_path, local: true do |form|
 
   .field
-    = form.label :address, class: "label", id: "house_address"
+    = form.label :address, class: "label"
     .control
-      = form.text_field :address, placeholder: Faker::Address.street_address, class: 'input'
+      = form.text_field :address, placeholder: Faker::Address.street_address, class: 'input', id: "house_address"
 
   .field
     = form.label :city, class: "label"
     .control
-      = form.text_field :city, placeholder: Faker::Address.city, class: 'input', disabled: true
+      = form.text_field :city, placeholder: Faker::Address.city, class: 'input', disabled: true, id: 'locality'
 
   .field
     = form.label :chimney, class: "label"
