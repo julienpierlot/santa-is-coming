@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_05_170352) do
+ActiveRecord::Schema.define(version: 2020_01_26_130957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2020_01_05_170352) do
     t.string "address"
     t.string "city"
     t.boolean "chimney", default: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "lists", force: :cascade do |t|
