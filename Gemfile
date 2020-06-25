@@ -15,7 +15,7 @@ gem "bulma-rails", "~> 0.8.0"
 
 gem 'sidekiq'
 
-gem 'rack', '2.0.8'
+gem 'rack', '2.1.4'
 
 gem 'geocoder'
 
